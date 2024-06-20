@@ -8,8 +8,6 @@ import { useDispatch } from "react-redux";
 import { GrayButton, MoveButton } from "@/atoms/button/MoveButton";
 import SandMail from "./sendMail/sendMail";
 import { XIcon } from "../../public/icons/icons";
-import { IUser } from "./component/users/model/user.model";
-import { fetchExistUser, fetchLoginUser } from "./component/users/service/user.service";
 import { PG } from "./common/enums/PG";
 
 
@@ -26,7 +24,7 @@ const Login: NextPage = () => {
     const router = useRouter()
 
     const dispatch = useDispatch();
-    const [userinfo, setUserinfo] = useState({ username: '' } as IUser)
+    const [userinfo, setUserinfo] = useState({ username: '', password:'' });
 
 
     const handleUsername = (e: any) => {
@@ -56,36 +54,6 @@ const Login: NextPage = () => {
         alert('권한 담당자에게 연락 부탁드립니다.\n' +
             '담당자 : 인사팀 김현주\n' +
             'Tel : 2046')
-    }
-
-
-    const handleSubmit = () => {
-        console.log('login page 입력받은 내용 ' + JSON.stringify(userinfo))
-        setLen(true)
-        dispatch(fetchExistUser(userinfo.username))
-            .then((res: any) => {
-                if (res != undefined) {
-                    setMsg("* 있는 아이디입니다.")
-                    dispatch(fetchLoginUser(userinfo))
-                        .then((resp: any) => {
-                            router.push(`/dashboard`)
-                            router.refresh()
-                        })
-                        .catch((err: any) => {
-                            alert("Wrong password. 시도하세요")
-                        })
-                } else {
-                    console.log("fetchExistUser : " + JSON.stringify(res))
-                    setMsg('* 회원가입을 진행해주세요.')
-                }
-            })
-            .catch((err: any) => {
-                console.log("fetchExistUser error : " + err)
-            })
-
-        if (formRef.current) {
-            formRef.current.value = "";
-        }
     }
 
     return (

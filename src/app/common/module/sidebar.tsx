@@ -52,7 +52,7 @@ function Sidebar() {
 
                         <div className="flex flex-col justify-center">
                             {menus.map((i: ISubmenu) => (
-                                <ul className="h-full w-full px-[50px]">
+                                <ul key={i.id} className="h-full w-full px-[50px]">
                                     <li className="h-[40px] w-full group-hover/item:visible hover:visible">
                                         <button onClick={i.address} className="w-[100%] border-b-2 hover:text-amber-200 hover:border-amber-200">
                                             {i.title}

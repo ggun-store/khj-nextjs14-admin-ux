@@ -10,14 +10,9 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { NextPage } from 'next';
 
 import Chart from 'chart.js/auto';
-import { INps } from '../model/nps.model';
-import { getAllNps } from '../service/transaction.slice';
-import { useSelector } from 'react-redux';
-import { fetchTop10Nps } from '../service/transaction.service';
-import { useDispatch } from 'react-redux';
+
 Chart.register(CategoryScale,
     LinearScale,
     PointElement,

@@ -1,18 +1,19 @@
 'use cilent'
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 
 const Calendar = () => {
-    const usaTime = new Date().getTime() + (new Date().getTimezoneOffset() * 60 * 10000);
-    const korTime = new Date(usaTime + (9 * 60 * 60 * 1000))
+    const usaTime = useMemo(() => new Date().getTime() + (new Date().getTimezoneOffset() * 60 * 1000), []);
+    const korTime = useMemo(() => new Date(usaTime + (9 * 60 * 60 * 1000)), [usaTime]);
 
-    const today = {
+    const today = useMemo(() => ({
         year: korTime.getFullYear(),
         month: korTime.getMonth() + 1,
         date: korTime.getDate(),
         day: korTime.getDay(),
-    };
+    }), [korTime]);
 
-    const week = ["일", "월", "화", "수", "목", "금", "토"];
+    const week = useMemo(() => ["일", "월", "화", "수", "목", "금", "토"], []);
+
     const [selectedYear, setSelectedYear] = useState(today.year);
     const [selectedMonth, setSelectedMonth] = useState(today.month);
     const dateTotalCount = new Date(selectedYear, selectedMonth, 0).getDate();
@@ -24,7 +25,7 @@ const Calendar = () => {
         } else {
             setSelectedMonth(selectedMonth - 1);
         }
-    }, [selectedMonth]);
+    }, [selectedMonth, selectedYear]);
 
     const nextMonth = useCallback(() => {
         if (selectedMonth === 12) {
@@ -33,7 +34,7 @@ const Calendar = () => {
         } else {
             setSelectedMonth(selectedMonth + 1);
         }
-    }, [selectedMonth]);
+    }, [selectedMonth, selectedYear]);
 
     const monthControl = useCallback(() => {
         let monthArr = [];
@@ -67,7 +68,7 @@ const Calendar = () => {
                 {yearArr}
             </select>
         );
-    }, [selectedYear]);
+    }, [selectedYear, today.year]);
 
     const changeSelectMonth = (e: any) => {
         setSelectedMonth(Number(e.target.value));
@@ -92,7 +93,7 @@ const Calendar = () => {
             );
         });
         return weekArr;
-    }, []);
+    }, [week]);
 
 
     const returnDay = useCallback(() => {

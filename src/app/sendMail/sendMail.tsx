@@ -2,15 +2,12 @@
 
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
-
-import { useDispatch, useSelector } from 'react-redux';
 import { FmdGood,AttachFile } from '@mui/icons-material';
 import { MoveButton } from '@/atoms/button/MoveButton';
 
 export default function SandMail() {
 
   const router = useRouter();
-  const dispatch = useDispatch();
 
   const { register, handleSubmit, formState: { errors }, } = useForm<any>({
     defaultValues: {

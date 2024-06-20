@@ -65,7 +65,7 @@ function Sidebar() {
 
                         <div className="flex flex-col justify-center">
                             {menus.map((i: ISubmenu) => (
-                                <ul className="h-full w-full px-[50px]">
+                                <ul key={i.id} className="h-full w-full px-[50px]">
                                     <li className="h-[40px] w-full group-hover/item:visible hover:visible">
                                         <button onClick={i.address} className="w-[100%] border-b-2 hover:text-amber-200 hover:border-amber-200">
                                             {i.title}
@@ -78,7 +78,7 @@ function Sidebar() {
                                                 <ul key={i.id} className="h-auto group">
                                                     {show == 1 ?
                                                         jusikSub.map((i: any) =>
-                                                            <li className="p-1 ">
+                                                            <li key={i.id} className="p-1 ">
                                                                 <button onClick={i.address} className="w-[100%] text-left hover:text-amber-200 hover:border-amber-200">
                                                                     ㄴ{i.title}
                                                                 </button>
