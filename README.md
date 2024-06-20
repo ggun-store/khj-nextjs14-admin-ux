@@ -1,23 +1,19 @@
-This is a Next.js 14
+## nextjs + prisma + progresql
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-yarn
-
 yarn run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://po.ggun.com](http://po.ggun.com) with your browser to see the result.
 
+## update log
+240607 prototype finish
+240608 prototype add redux
 
-## Connect my domain
-
-[http://khj.ggun.srote]()
-
-
-## Update
-
-240613 first update.
+## To be upgrade
+chart.js
+pages add..
