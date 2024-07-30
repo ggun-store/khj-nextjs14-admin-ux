@@ -1,5 +1,5 @@
-import { useRef, useEffect, MutableRefObject } from 'react';
-import { Bar, Doughnut, Line } from 'react-chartjs-2'
+
+import { Bar} from 'react-chartjs-2'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -10,8 +10,6 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { NextPage } from 'next';
-
 import Chart from 'chart.js/auto';
 Chart.register(CategoryScale,
     LinearScale,
@@ -22,9 +20,6 @@ Chart.register(CategoryScale,
     Legend);
 
 function BarChart() {
-
-    // const allNps: INps[] = useSelector(getAllNps)
-    // const dispatch = useDispatch()
 
     const color =[
         {name:"red", color:"#433E49", value: "300"},
@@ -65,7 +60,7 @@ function BarChart() {
     };
 
 
-    const oprions: any = {
+    const options: any = {
         scales: {
             x: {
                 stacked: true,
@@ -86,7 +81,7 @@ function BarChart() {
     // }, []);
 
     return (
-        <Bar data={data} options={oprions} className='w-full'></Bar>
+        <Bar data={data} options={options} className='w-full'></Bar>
     );
 }
 export default BarChart;

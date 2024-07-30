@@ -1,7 +1,7 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 import { IBoard } from "../model/board.model";
-import { fetchAllBoards } from "../service/board.service";
+import { fetchAllBoards, fetchFindBoardById, fetchSaveBoard, fetchUpdateBoard } from "../service/board.service";
 
 const status = {
     pending: 'pending',
@@ -31,6 +31,9 @@ export const boardSlice = createSlice({
 
         builder
             .addCase(fetchAllBoards.fulfilled, (state: any, { payload }: any) => { state.array = payload }) 
+            .addCase(fetchFindBoardById.fulfilled, (state: any, { payload }: any) => { state.json = payload })
+            .addCase(fetchUpdateBoard.fulfilled, (state: any, { payload }: any) => { state.json = payload })
+            .addCase(fetchSaveBoard.fulfilled, (state: any, { payload }: any) => { state.json = payload })
     }
 })
 

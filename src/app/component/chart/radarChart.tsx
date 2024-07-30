@@ -70,7 +70,7 @@ function RadarChart() {
     };
 
 
-    const oprions: any = {
+    const options: any = {
         elements: {
             line: {
                 borderWidth: 1
@@ -81,7 +81,7 @@ function RadarChart() {
 
 
     return (
-        <Radar data={data} options={oprions} ></Radar>
+        <Radar data={data} options={options} ></Radar>
     );
 }
 export default RadarChart;

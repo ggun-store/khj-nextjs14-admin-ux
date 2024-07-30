@@ -1,5 +1,5 @@
-import { useRef, useEffect, MutableRefObject } from 'react';
-import { Bar, Doughnut, Line } from 'react-chartjs-2'
+
+import { Bar } from 'react-chartjs-2'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -10,9 +10,9 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { NextPage } from 'next';
 
 import Chart from 'chart.js/auto';
+
 Chart.register(CategoryScale,
     LinearScale,
     PointElement,

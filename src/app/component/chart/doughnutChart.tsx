@@ -1,5 +1,4 @@
-import { useRef, useEffect, MutableRefObject } from 'react';
-import { Bar, Doughnut, Line } from 'react-chartjs-2'
+import { Doughnut } from 'react-chartjs-2'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -10,7 +9,6 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { NextPage } from 'next';
 import Chart from 'chart.js/auto';;
 
 Chart.register(CategoryScale,
@@ -43,7 +41,7 @@ function DoughnutChart() {
 
     // const image = () => { { kaeru } }
 
-    const oprions: any = {
+    const options: any = {
         plugins: {
             title: {
                 display: true,
@@ -71,7 +69,7 @@ function DoughnutChart() {
 
 
     return (
-        <Doughnut data={data} options={oprions}></Doughnut>
+        <Doughnut data={data} options={options}></Doughnut>
     );
 }
 export default DoughnutChart;

@@ -9,7 +9,7 @@ return instance
 }
 
 // export  function server() {
-//     const instance = axios.create({ baseURL: process.env.SERVER })
+//     const instance = axios.create({ baseURL: process.env.REACT_APP_SERVER })
 // setInterceptor(instance)
 // return instance
 // }

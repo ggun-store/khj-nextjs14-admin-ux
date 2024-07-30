@@ -14,3 +14,36 @@ export const allBoardsAPI = async () => {
         return error
     }
 }
+
+export const findBoardByIdAPI = async (id:number) => {
+    // try {
+    //     const response = await findSingleBoard(id)
+    //     console.log("findBoardByIdAPI : "+ response)
+    //     return response
+    // } catch (error) {
+    //     console.log("findBoardByIdAPI EERR!!!"+ error)
+    //     return error
+    // }
+}
+
+export const updateBoardAPI = async (board:IBoard) => {
+    try {
+        // const response:any = await instance().put('/boards/modify', board)
+        // console.log("UpdateBoardAPI : "+ response)
+        // return response
+    } catch (error) {
+        console.log("UpdateBoardAPI EERR!!!"+ error)
+        return error
+    }
+}
+
+export const saveBoardAPI = async (board:IBoard) => {
+    try {
+        // const response:any = await saveBoard(board)
+        // // console.log("SaveBoardAPI : "+ response)
+        // return response
+    } catch (error) {
+        console.log("SaveBoardAPI EERR!!!"+ error)
+        return error
+    }
+}

@@ -1,5 +1,4 @@
-import { useRef, useEffect, MutableRefObject } from 'react';
-import { Bar, Doughnut, Line, PolarArea } from 'react-chartjs-2'
+import { PolarArea } from 'react-chartjs-2'
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -10,9 +9,9 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { NextPage } from 'next';
 
 import Chart from 'chart.js/auto';
+
 Chart.register(CategoryScale,
     LinearScale,
     PointElement,
@@ -44,7 +43,7 @@ const color =[
     };
 
 
-    const oprions: any = {
+    const options: any = {
         scales: {
   
         }
@@ -52,7 +51,7 @@ const color =[
 
 
     return (
-        <PolarArea data={data} options={oprions}></PolarArea>
+        <PolarArea data={data} options={options}></PolarArea>
     );
 }
 export default PolarChart;
